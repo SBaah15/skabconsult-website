@@ -1,10 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle, 
-  BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay, 
-  BookOpen, Star, ArrowRight, Share2, Camera, Play, Twitter, Linkedin,
-  Sparkles, Loader2
+import {
+  Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle,
+  BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay,
+  BookOpen, Star, ArrowRight,
+  Sparkles, Loader2, Share2
 } from 'lucide-react';
+
+const TwitterIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768" /><path d="M20 4l-7.364 7.364" />
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const FacebookIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
+const YoutubeIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+  </svg>
+);
+
+const TiktokIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
+
+const WhatsappIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+  </svg>
+);
 
 // --- STYLES & ANIMATIONS ---
 const customStyles = `
@@ -167,7 +209,7 @@ export default function App() {
           <div className="flex items-center space-x-6 mb-2 md:mb-0">
             {/* Logo */}
             <div className="flex items-center bg-white px-3 py-1 rounded-lg cursor-pointer shadow-sm" onClick={() => setCurrentPage('home')}>
-               <img src="Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-8 object-contain" />
+               <img src="/Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-8 object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-4">
               <span className="flex items-center gap-1"><Mail size={14}/> info@skabconsult.com</span>
@@ -313,7 +355,7 @@ export default function App() {
           {/* Brand & Socials */}
           <div className="space-y-6">
             <div className="flex items-center gap-2 bg-white p-2 rounded-xl inline-block cursor-pointer shadow-[0_0_15px_rgba(174,0,255,0.3)]">
-               <img src="Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-12 object-contain" />
+               <img src="/Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-12 object-contain" />
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
               Leading consulting company, dedicated to helping individuals and businesses achieve their goals.
@@ -321,11 +363,33 @@ export default function App() {
             <div className="pt-4">
               <h4 className="text-white font-semibold mb-3">Follow Us</h4>
               <div className="flex flex-wrap gap-3">
-                {[Share2, Camera, Play, Twitter, Linkedin].map((Icon, i) => (
-                  <button key={i} className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer" aria-label="Social Link">
+                {[
+                  { Icon: FacebookIcon, label: 'Facebook', href: 'https://facebook.com/skabconsult' },
+                  { Icon: InstagramIcon, label: 'Instagram', href: 'https://instagram.com/skabconsult' },
+                  { Icon: YoutubeIcon, label: 'YouTube', href: 'https://youtube.com/@skabconsult' },
+                  { Icon: TwitterIcon, label: 'X (Twitter)', href: 'https://x.com/skabconsult' },
+                  { Icon: LinkedinIcon, label: 'LinkedIn', href: 'https://linkedin.com/company/skabconsult' },
+                  { Icon: TiktokIcon, label: 'TikTok', href: 'https://tiktok.com/@skabconsult' },
+                  { Icon: WhatsappIcon, label: 'WhatsApp', href: 'https://wa.me/233595912902' },
+                ].map(({ Icon, label, href }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer" aria-label={label} title={label}>
                     <Icon size={18} />
-                  </button>
+                  </a>
                 ))}
+                <button
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({ title: 'Skab Consult', url: window.location.href });
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                    }
+                  }}
+                  className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer"
+                  aria-label="Share"
+                  title="Share"
+                >
+                  <Share2 size={18} />
+                </button>
               </div>
             </div>
           </div>
@@ -822,7 +886,7 @@ function Industries() {
 function Portfolio() {
   const projects = [
     { type: 'Evaluation', title: 'National SME Assessment', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500' },
-    { type: 'Research', title: 'Agricultural Yield Analysis', img: 'https://images.unsplash.com/photo-1586771107445-d3af2864c017?auto=format&fit=crop&q=80&w=500' },
+    { type: 'Research', title: 'Agricultural Yield Analysis', img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=500' },
     { type: 'Web Design', title: 'E-commerce Platform for Traders', img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=500' },
     { type: 'Evaluation', title: 'Healthcare Intervention Review', img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=500' },
     { type: 'Research', title: 'Market Demographics 2025', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500' },
