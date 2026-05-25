@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle, 
-  BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay, 
-  BookOpen, Star, ArrowRight, Share2, Camera, Play, Twitter, Linkedin,
+import {
+  Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle,
+  BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay,
+  BookOpen, Star, ArrowRight, Share2, Camera, Play,
   Sparkles, Loader2
 } from 'lucide-react';
+
+const TwitterIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768" /><path d="M20 4l-7.364 7.364" />
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+  </svg>
+);
 
 // --- STYLES & ANIMATIONS ---
 const customStyles = `
@@ -167,7 +179,7 @@ export default function App() {
           <div className="flex items-center space-x-6 mb-2 md:mb-0">
             {/* Logo */}
             <div className="flex items-center bg-white px-3 py-1 rounded-lg cursor-pointer shadow-sm" onClick={() => setCurrentPage('home')}>
-               <img src="Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-8 object-contain" />
+               <img src="/Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-8 object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-4">
               <span className="flex items-center gap-1"><Mail size={14}/> info@skabconsult.com</span>
@@ -313,7 +325,7 @@ export default function App() {
           {/* Brand & Socials */}
           <div className="space-y-6">
             <div className="flex items-center gap-2 bg-white p-2 rounded-xl inline-block cursor-pointer shadow-[0_0_15px_rgba(174,0,255,0.3)]">
-               <img src="Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-12 object-contain" />
+               <img src="/Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-12 object-contain" />
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
               Leading consulting company, dedicated to helping individuals and businesses achieve their goals.
@@ -321,7 +333,7 @@ export default function App() {
             <div className="pt-4">
               <h4 className="text-white font-semibold mb-3">Follow Us</h4>
               <div className="flex flex-wrap gap-3">
-                {[Share2, Camera, Play, Twitter, Linkedin].map((Icon, i) => (
+                {[Share2, Camera, Play, TwitterIcon, LinkedinIcon].map((Icon, i) => (
                   <button key={i} className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer" aria-label="Social Link">
                     <Icon size={18} />
                   </button>
