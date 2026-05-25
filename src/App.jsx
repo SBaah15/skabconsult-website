@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle, 
   BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay, 
-  BookOpen, Star, ArrowRight, Share2, Camera, Play, Twitter, Linkedin,
+  BookOpen, Star, ArrowRight, Share2, Camera, Play,
   Sparkles, Loader2
 } from 'lucide-react';
 
@@ -321,7 +321,7 @@ export default function App() {
             <div className="pt-4">
               <h4 className="text-white font-semibold mb-3">Follow Us</h4>
               <div className="flex flex-wrap gap-3">
-                {[Share2, Camera, Play, Twitter, Linkedin].map((Icon, i) => (
+                {[Share2, Camera, Play].map((Icon, i) => (
                   <button key={i} className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer" aria-label="Social Link">
                     <Icon size={18} />
                   </button>
