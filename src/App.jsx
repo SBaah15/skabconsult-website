@@ -3,7 +3,7 @@ import {
   Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle,
   BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay,
   BookOpen, Star, ArrowRight,
-  Sparkles, Loader2
+  Sparkles, Loader2, Share2
 } from 'lucide-react';
 
 const TwitterIcon = ({ size = 24 }) => (
@@ -376,6 +376,20 @@ export default function App() {
                     <Icon size={18} />
                   </a>
                 ))}
+                <button
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({ title: 'Skab Consult', url: window.location.href });
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                    }
+                  }}
+                  className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer"
+                  aria-label="Share"
+                  title="Share"
+                >
+                  <Share2 size={18} />
+                </button>
               </div>
             </div>
           </div>
