@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Menu, X, ChevronDown, Phone, Mail, MapPin, Shield, CheckCircle, 
   BarChart, Globe, Users, Briefcase, Database, Search, MonitorPlay, 
-  BookOpen, Star, ArrowRight, Facebook, Instagram, Twitter, Linkedin, Youtube,
+  BookOpen, Star, ArrowRight, Share2, Camera, Play, Twitter, Linkedin,
   Sparkles, Loader2
 } from 'lucide-react';
 
@@ -321,7 +321,7 @@ export default function App() {
             <div className="pt-4">
               <h4 className="text-white font-semibold mb-3">Follow Us</h4>
               <div className="flex flex-wrap gap-3">
-                {[Facebook, Instagram, Twitter, Linkedin, Youtube].map((Icon, i) => (
+                {[Share2, Camera, Play, Twitter, Linkedin].map((Icon, i) => (
                   <button key={i} className="p-2 bg-gray-900 rounded-full hover:bg-[#ae00ff] hover:text-white transition cursor-pointer" aria-label="Social Link">
                     <Icon size={18} />
                   </button>
@@ -529,15 +529,9 @@ function Home() {
   return (
     <div className="animate-fade-in-up">
       {/* Hero Section */}
-      <div className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
-        {/* Complex Background representing travelers, oil, mining, agriculture, vendors */}
-        <div className="absolute inset-0 z-0 grid grid-cols-2 md:grid-cols-4 opacity-40 mix-blend-overlay">
-           <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Executive" />
-           <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Agriculture" />
-           <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Mining" />
-           <img src="https://images.unsplash.com/photo-1533618193853-eb3eec6f9478?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Market" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
+      <div className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style={{backgroundImage: 'url(/background.jpeg)'}}>
+        {/* Background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/40 z-10"></div>
         
         <div className="relative z-20 text-center max-w-4xl px-4">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-2xl">
@@ -592,9 +586,9 @@ function Home() {
           <h3 className="text-white text-2xl font-bold mb-8">Trusted by successful companies & institutions in Ghana</h3>
           <div className="flex flex-wrap justify-center gap-8 opacity-70">
             {/* Placeholders for logos */}
-            {[1,2,3,4,5].map(i => (
-              <div key={i} className="w-32 h-16 bg-gray-800 rounded border border-gray-700 flex items-center justify-center text-gray-500 font-bold hover:bg-[#ae00ff] hover:text-white transition duration-500 cursor-pointer">
-                PARTNER {i}
+            {['Ministry of Gender, Children and Social Protection', 'Donewell Research', 'CRESCENT', 'University of Ghana', 'Kwame Nkrumah University of Science and Technology'].map((partner, i) => (
+              <div key={i} className="w-32 h-16 bg-gray-800 rounded border border-gray-700 flex items-center justify-center text-gray-500 font-bold hover:bg-[#ae00ff] hover:text-white transition duration-500 cursor-pointer text-xs text-center p-2">
+                {partner}
               </div>
             ))}
           </div>
