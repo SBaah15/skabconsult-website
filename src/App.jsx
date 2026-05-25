@@ -886,7 +886,7 @@ function Industries() {
 function Portfolio() {
   const projects = [
     { type: 'Evaluation', title: 'National SME Assessment', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500' },
-    { type: 'Research', title: 'Agricultural Yield Analysis', img: 'https://images.unsplash.com/photo-1586771107445-d3af2864c017?auto=format&fit=crop&q=80&w=500' },
+    { type: 'Research', title: 'Agricultural Yield Analysis', img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=500' },
     { type: 'Web Design', title: 'E-commerce Platform for Traders', img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=500' },
     { type: 'Evaluation', title: 'Healthcare Intervention Review', img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=500' },
     { type: 'Research', title: 'Market Demographics 2025', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500' },
