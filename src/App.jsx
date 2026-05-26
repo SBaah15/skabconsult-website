@@ -822,7 +822,7 @@ function Industries() {
 function Portfolio() {
   const projects = [
     { type: 'Evaluation', title: 'National SME Assessment', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500' },
-    { type: 'Research', title: 'Agricultural Yield Analysis', img: 'https://images.unsplash.com/photo-1586771107445-d3af2864c017?auto=format&fit=crop&q=80&w=500' },
+    { type: 'Research', title: 'Agricultural Yield Analysis', img: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&q=80&w=500' },
     { type: 'Web Design', title: 'E-commerce Platform for Traders', img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=500' },
     { type: 'Evaluation', title: 'Healthcare Intervention Review', img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=500' },
     { type: 'Research', title: 'Market Demographics 2025', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500' },
@@ -830,7 +830,7 @@ function Portfolio() {
   ];
 
   return (
-    <div className="animate-fade-in-up py-20 px-4 max-w-7xl mx-auto">
+    <div className="animate-fade-in-up py-20 px-4 max-w-7xl mx-auto" style={{backgroundImage: 'url(/Bird.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
        <div className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">Project <span className="text-[#ae00ff]">Portfolio</span></h1>
         <p className="text-gray-600 max-w-2xl mx-auto">A glimpse into our successful engagements across various sectors.</p>
