@@ -74,7 +74,7 @@ const customStyles = `
 
 // --- GEMINI API HELPER (With Exponential Backoff) ---
 const callGeminiAPI = async (prompt, retries = 5, delay = 1000) => {
-  const apiKey = ""; // Execution environment injects this
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
   try {
@@ -830,29 +830,31 @@ function Portfolio() {
   ];
 
   return (
-    <div className="animate-fade-in-up py-20 px-4 max-w-7xl mx-auto" style={{backgroundImage: 'url(/Bird.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
-       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4">Project <span className="text-[#ae00ff]">Portfolio</span></h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">A glimpse into our successful engagements across various sectors.</p>
-      </div>
+    <div style={{backgroundImage: 'url(/gradient.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+      <div className="animate-fade-in-up py-20 px-4 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4">Project <span className="text-[#ae00ff]">Portfolio</span></h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">A glimpse into our successful engagements across various sectors.</p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((proj, idx) => (
-          <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_10px_30px_rgba(174,0,255,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
-            <div className="h-48 overflow-hidden relative">
-              <img src={proj.img} alt={proj.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
-              <div className="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm border border-[#ae00ff]">
-                {proj.type} Project
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((proj, idx) => (
+            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_10px_30px_rgba(174,0,255,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+              <div className="h-48 overflow-hidden relative">
+                <img src={proj.img} alt={proj.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+                <div className="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm border border-[#ae00ff]">
+                  {proj.type} Project
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{proj.title}</h3>
+                <button className="text-[#ae00ff] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                  View Details <ArrowRight size={14} />
+                </button>
               </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">{proj.title}</h3>
-              <button className="text-[#ae00ff] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
-                View Details <ArrowRight size={14} />
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
