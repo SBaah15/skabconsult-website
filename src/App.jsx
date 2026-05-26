@@ -170,8 +170,8 @@ export default function App() {
                <img src="Actual SKAB Logo.png" alt="Skab Consult Logo" className="h-8 object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-4">
-              <span className="flex items-center gap-1"><Mail size={14}/> info@skabconsult.com</span>
-              <span className="flex items-center gap-1"><Phone size={14}/> +233 242 523 480</span>
+              <span className="flex items-center gap-1 text-[#02FAE9]"><Mail size={14}/> info@skabconsult.com</span>
+              <span className="flex items-center gap-1 text-[#02FAE9]"><Phone size={14}/> +233 242 523 480</span>
             </div>
           </div>
           <div>
@@ -537,13 +537,13 @@ function Home() {
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-2xl">
             Excellence in <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ae00ff] to-[#02FAE9]">Consultancy Services</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 font-light border-l-4 border-[#ae00ff] pl-6 text-left bg-black/30 p-4 rounded-r-xl backdrop-blur-sm">
-            <strong className="text-white">Expert consulting at its Best!</strong><br/>
+          <p className="text-white text-2xl font-bold mb-10 border-l-4 border-[#ae00ff] pl-6 text-left bg-black/30 p-4 rounded-r-xl backdrop-blur-sm">
+            <strong className="text-[#02FAE9]">Expert consulting at its Best!</strong><br/>
             Skab Consult is a leading consulting company, dedicated to helping individuals and businesses achieve their goals. We specialize in providing expert guidance for educational and business purposes.
           </p>
           <div className="flex gap-4 justify-center">
-            <button className="eclipse-btn text-lg">Get Started</button>
-            <button className="bg-white text-black font-bold px-8 py-3 rounded-full hover:bg-gray-200 transition">Get Consultation</button>
+            <button className="eclipse-btn text-lg text-black" onClick={() => setCurrentPage('services')}>Get Started</button>
+            <button className="bg-white text-black font-bold px-8 py-3 rounded-full hover:bg-gray-200 transition" onClick={() => setCurrentPage('contact')}>Get Consultation</button>
           </div>
         </div>
       </div>
@@ -554,7 +554,7 @@ function Home() {
           <div className="md:w-1/2 bg-gray-900 text-white p-12 relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#ae00ff] to-transparent"></div>
             <h2 className="text-3xl font-bold mb-6 text-[#ae00ff]">About Us</h2>
-            <p className="leading-relaxed text-gray-300 relative z-10 group-hover:scale-105 transition-transform duration-700">
+            <p className="text-white text-2xl font-bold relative z-10 group-hover:scale-105 transition-transform duration-700">
               Skab Consult specializes in offering comprehensive research, monitoring, and evaluation services, as well as mentorship and training. Our commitment to excellence ensures that our clients receive tailored solutions that meet their unique needs.
             </p>
           </div>
