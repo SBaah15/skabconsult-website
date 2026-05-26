@@ -298,7 +298,7 @@ export default function App() {
 
       {/* --- MAIN PAGE CONTENT RENDERER --- */}
       <main className="min-h-[70vh]">
-        {currentPage === 'home' && <Home />}
+        {currentPage === 'home' && <Home setCurrentPage={setCurrentPage} />}
         {currentPage === 'services' && <Services />}
         {currentPage === 'industries' && <Industries />}
         {currentPage === 'portfolio' && <Portfolio />}
@@ -525,7 +525,7 @@ export default function App() {
 
 // --- PAGE COMPONENTS ---
 
-function Home() {
+function Home({ setCurrentPage }) {
   return (
     <div className="animate-fade-in-up">
       {/* Hero Section */}
