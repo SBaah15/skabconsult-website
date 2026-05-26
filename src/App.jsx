@@ -595,6 +595,7 @@ function Home({ setCurrentPage }) {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
@@ -880,8 +881,9 @@ function Contact() {
   };
 
   return (
-    <div className="animate-fade-in-up py-20 px-4 max-w-7xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+    <div style={{backgroundImage: 'url(/Copilot_3.png)', backgroundSize: 'cover', backgroundPosition: 'center', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+      <div className="animate-fade-in-up py-20 px-4 max-w-7xl mx-auto">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
         
         {/* Info Side */}
         <div className="lg:w-1/3 bg-black text-white p-10 relative">
@@ -996,8 +998,9 @@ function Contact() {
 
 function PartnerUs() {
   return (
-    <div className="animate-fade-in-up py-20 px-4 max-w-4xl mx-auto">
-      <div className="text-center mb-12">
+    <div style={{backgroundImage: 'url(/Copilot_2.png)', backgroundSize: 'cover', backgroundPosition: 'center', width: '100vw', position: 'relative', left: '50%', marginLeft: '-50vw', marginRight: '-50vw'}}>
+      <div className="animate-fade-in-up py-20 px-4 max-w-4xl mx-auto">
+        <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Partner <span className="text-[#ae00ff]">With Us</span></h1>
         <p className="text-gray-600">Join our network of professionals, interns, and sponsors to create lasting impact.</p>
       </div>
